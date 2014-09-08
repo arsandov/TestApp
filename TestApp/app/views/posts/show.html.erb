@@ -12,3 +12,11 @@
   <strong>Post:</strong>
   <%= @post.text %>
 </p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @post.tag1 %> , <%= @post.tag2 %> , <%= @post.tag3 %> , <%= @post.tag4 %> , <%= @post.tag5 %>
+</p>
+
+
+<%= link_to 'Volver', posts_path %>
