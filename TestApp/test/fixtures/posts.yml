@@ -4,8 +4,18 @@ one:
   title: MyString
   user: MyString
   text: MyText
+  tag1: MyString
+  tag2: MyString
+  tag3: MyString
+  tag4: MyString
+  tag5: MyString
 
 two:
   title: MyString
   user: MyString
   text: MyText
+  tag1: MyString
+  tag2: MyString
+  tag3: MyString
+  tag4: MyString
+  tag5: MyString
