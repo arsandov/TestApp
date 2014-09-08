@@ -1,0 +1,24 @@
+<h1 align="center">Nuevo Post</h1>
+
+<%= form_for :post, url: posts_path do |f| %>
+    <p align="center">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p align="center">
+      <%= f.label :user %><br>
+      <%= f.text_field :user %>
+    </p>
+
+    <p align="center">
+      <%= f.label :text %><br>
+      <%= f.text_area :text %>
+    </p>
+
+
+
+    <p align="center">
+      <%= f.submit %>
+    </p>
+<% end %>
