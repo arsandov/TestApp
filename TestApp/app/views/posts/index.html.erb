@@ -10,11 +10,12 @@
   </tr>
 
   <% @post.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.user %></td>
-        <td><%= post.text %></td>
-        <td><%= link_to 'Show', post_path(post) %></td>
-      </tr>
+          <tr class="post">
+            <td ><%= post.title %></td>
+            <td><%= post.user %></td>
+            <td><%= post.text %></td>
+            <td><%= link_to 'Show', post_path(post) %></td>
+          </tr>
   <% end %>
 </table>
+<div class = "button"></div>
