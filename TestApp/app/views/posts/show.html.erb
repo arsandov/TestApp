@@ -18,5 +18,32 @@
   <%= @post.tag1 %> , <%= @post.tag2 %> , <%= @post.tag3 %> , <%= @post.tag4 %> , <%= @post.tag5 %>
 </p>
 
+<h2>Comentarios:</h2>
+<% @post.comments.each do |comment| %>
+    <p>
+      <strong>Usuario:</strong>
+      <%= comment.user %>
+    </p>
+
+    <p>
+      <strong>Comentario:</strong>
+      <%= comment.body %>
+    </p>
+<% end %>
+
+<h2>Agrega un Comentario:</h2>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+    <p>
+      <%= f.label :user %><br>
+      <%= f.text_field :user %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
 
 <%= link_to 'Volver', posts_path %>
