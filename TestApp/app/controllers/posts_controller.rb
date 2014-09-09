@@ -18,6 +18,10 @@ class PostsController < ApplicationController
     @post = Post.all
   end
 
+  def by_tags
+  
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :user, :text, :tag1, :tag2, :tag3, :tag4, :tag5)

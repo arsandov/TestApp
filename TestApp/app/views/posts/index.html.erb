@@ -4,26 +4,25 @@
 <div class = "posts">
   <div class="ingresar">
     <h3>Filtrar</h3>
-    <p>Para filtrar por tags, ponga el tag qeu corresponde. Sino ponga todosr</p>
+    <p>Para filtrar por tags, ponga el tag que corresponde. Sino ponga todos</p>
     <p>
       Ingrese Filtro:
       <input type='text' class='textInput' value='todos' />
     </p>
   </div>
-    <table>
+    <table class='table'>
       <tr>
         <th>Titulo</th>
         <th>Autor</th>
-        <th>Post</th>
+        <th>Opciones</th>
       </tr>
 
       <% @post.each do |post| %>
-              <tr class="post high todos <%= post.tag1 %> <%= post.tag2 %> <%= post.tag3 %> <%= post.tag4 %> <%= post.tag5 %>">
-                <td ><%= post.title %></td>
-                <td><%= post.user %></td>
-                <td><%= post.text %></td>
-                <td><%= link_to 'Show', post_path(post) %></td>
-              </tr>
+        <tr class="post high todos <%= post.tag1 %> <%= post.tag2 %> <%= post.tag3 %> <%= post.tag4 %> <%= post.tag5 %>">
+          <td><%= post.title %></td>
+          <td><%= post.user %></td>
+          <td><%= link_to 'Show', post_path(post) %></td>
+        </tr>
       <% end %>
     </table>
 </div>

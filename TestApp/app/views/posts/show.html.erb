@@ -1,3 +1,9 @@
+<% if @post.errors.any?  %>
+  <% @post.errors.each do |error| %>
+    <p>Hubo un error  <%= error.message %> </p>
+  <% end %>
+<% end %>
+
 <p>
   <strong>Titulo:</strong>
   <%= @post.title %>
@@ -18,8 +24,16 @@
   <%= @post.tag1 %> , <%= @post.tag2 %> , <%= @post.tag3 %> , <%= @post.tag4 %> , <%= @post.tag5 %>
 </p>
 
-<h2>Comentarios:</h2>
+<h2>Comentarios</h2>
 <% @post.comments.each do |comment| %>
+    <% if comment.errors.any?  %>
+      <ul>
+        <% comment.errors.full_messages do |msg| %>
+          <li>Hubo un error:  <%= msg %> </li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <p>
       <strong>Usuario:</strong>
       <%= comment.user %>
@@ -29,6 +43,11 @@
       <strong>Comentario:</strong>
       <%= comment.body %>
     </p>
+
+    <%= button_to post_comment_path(post_id: @post.id, id: comment.id), method: :delete, class: "btn btn-danger" do%>
+      <i class='fa fa-trash'></i>
+    <% end %>
+
 <% end %>
 
 <h2>Agrega un Comentario:</h2>
