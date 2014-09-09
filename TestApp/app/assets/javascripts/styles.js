@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    $('.button').on('click', function(){
-        $('.post').toggleClass('high');
+    $('.ingresar').on('keyup','.textInput',function(){
+        var tagFilter ='.' + $(this).val();
+        $('.post').removeClass('high');
+        $('.post').filter(tagFilter).addClass('high');
     });
 });

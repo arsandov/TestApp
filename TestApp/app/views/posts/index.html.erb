@@ -1,21 +1,29 @@
 <h1>Todos los Posts</h1>
 
 <%= link_to 'Nuevo Post', new_post_path %>
+<div class = "posts">
+  <div class="ingresar">
+    <h3>Filtrar</h3>
+    <p>Para filtrar por tags, ponga el tag qeu corresponde. Sino ponga todosr</p>
+    <p>
+      Ingrese Filtro:
+      <input type='text' class='textInput' value='todos' />
+    </p>
+  </div>
+    <table>
+      <tr>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Post</th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Titulo</th>
-    <th>Autor</th>
-    <th>Post</th>
-  </tr>
-
-  <% @post.each do |post| %>
-          <tr class="post">
-            <td ><%= post.title %></td>
-            <td><%= post.user %></td>
-            <td><%= post.text %></td>
-            <td><%= link_to 'Show', post_path(post) %></td>
-          </tr>
-  <% end %>
-</table>
-<div class = "button"> Resaltar todos </div>
+      <% @post.each do |post| %>
+              <tr class="post high todos <%= post.tag1 %> <%= post.tag2 %> <%= post.tag3 %> <%= post.tag4 %> <%= post.tag5 %>">
+                <td ><%= post.title %></td>
+                <td><%= post.user %></td>
+                <td><%= post.text %></td>
+                <td><%= link_to 'Show', post_path(post) %></td>
+              </tr>
+      <% end %>
+    </table>
+</div>
