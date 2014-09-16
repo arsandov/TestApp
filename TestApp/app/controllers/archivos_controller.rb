@@ -1,0 +1,2 @@
+class ArchivosController < ApplicationController
+end
