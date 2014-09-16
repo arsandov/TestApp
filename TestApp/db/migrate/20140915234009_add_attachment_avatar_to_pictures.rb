@@ -1,6 +1,6 @@
-class AddAttachmentAvatarToImages < ActiveRecord::Migration
+class AddAttachmentAvatarToPictures < ActiveRecord::Migration
   def self.up
-    change_table :images do |t|
+    change_table :pictures do |t|
       t.attachment :avatar
     end
   end
