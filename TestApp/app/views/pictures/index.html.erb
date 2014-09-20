@@ -1,0 +1,12 @@
+<h1>Menu Imagenes</h1>
+
+<%= link_to 'Nueva Imagen', new_picture_path %>
+
+<table>
+  <% @picture.each do |picture| %>
+      <tr>
+        <td><%= picture.title %></td>
+      </tr>
+  <% end %>
+</table>
+

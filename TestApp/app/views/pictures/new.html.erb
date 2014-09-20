@@ -1,0 +1,16 @@
+<h1>Subir una imagen nueva</h1>
+
+<%= form_for :picture, url: pictures_path do |f| %>
+    <p>
+      <%= f.label :Titulo %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p align="center">
+      <%= f.file_field :avatar %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
